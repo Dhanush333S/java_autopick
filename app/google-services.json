@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "126339226183",
+    "project_id": "autopick-ea9e8",
+    "storage_bucket": "autopick-ea9e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126339226183:android:dc5c5ccdf1c83232b8ef62",
+        "android_client_info": {
+          "package_name": "com.example.autopick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126339226183-21hcc2p0pl4ue2njkdltn7h7d37ua4ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tizCekASXMBOsZuG5ls0NJGl6LUtRAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126339226183-21hcc2p0pl4ue2njkdltn7h7d37ua4ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
