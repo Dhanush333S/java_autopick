@@ -61,12 +61,17 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 loading.setVisibility(View.GONE);
-                                Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
-                                Intent i= new Intent(LoginActivity.this,LoginActivity.class);
-                                startActivity(i);
-                                finish();
+                                if(FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
+                                    Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                                    Intent i= new Intent(LoginActivity.this,LoginActivity.class);
+                                    startActivity(i);
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "Please Verify the mail", Toast.LENGTH_SHORT).show();
+                                }
                             }else {
-                                Toast.makeText(LoginActivity.this, "Failed to Login In", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 loading.setVisibility(View.GONE);
                             }
                         }
@@ -82,10 +87,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
         if(user!=null){
-            Intent i=new Intent(LoginActivity.this,ListActivity.class);
-            Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show();
-            startActivity(i);
-            this.finish();
+            if(user.isEmailVerified()){
+                Intent i=new Intent(LoginActivity.this,ListActivity.class);
+                Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show();
+                startActivity(i);
+                this.finish();
+            }
+            else {
+                Toast.makeText(this, "Please Verify the email", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

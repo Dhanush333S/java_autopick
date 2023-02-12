@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 public class AddActivity extends AppCompatActivity {
     EditText name,id,about;
     Button button;
+    FloatingActionButton qrScan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,13 @@ public class AddActivity extends AppCompatActivity {
         id=findViewById(R.id.id);
         about=findViewById(R.id.about);
         button=findViewById(R.id.button);
+        qrScan=findViewById(R.id.qrScan);
+        qrScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),QrScanActivity.class));
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
