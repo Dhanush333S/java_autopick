@@ -70,7 +70,7 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent dashboard=new Intent(ListActivity.this,MainActivity.class);
+                Intent dashboard=new Intent(ListActivity.this,Dashboard.class);
                 String current=listView.getItemAtPosition(i).toString();
                 dashboard.putExtra("name",current);
                 startActivity(dashboard);

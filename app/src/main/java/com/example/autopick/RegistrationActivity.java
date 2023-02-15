@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +22,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private EditText username,password,confirmPassword;
     private Button signUp;
-    private Button login;
+    private TextView login;
     private ProgressBar loading;
     private FirebaseAuth mAuth;
 
@@ -35,7 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
         confirmPassword=findViewById(R.id.confirmPassword);
         signUp=findViewById(R.id.signUp);
         loading=findViewById(R.id.loading);
-        login=findViewById(R.id.login);
+        login=findViewById(R.id.signUp);
         mAuth=FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -88,5 +88,10 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void change(View view){
+        Intent i= new Intent(this,LoginActivity.class);
+        startActivity(i);
     }
 }
