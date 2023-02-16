@@ -4,69 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/purblue"
     tools:context=".LiveActivity">
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number of Thread:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/count"
-        app:layout_constraintEnd_toStartOf="@+id/count"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="TextView"
+    <ImageView android:layout_height="125dp"
+        android:layout_width="129dp"
+        app:srcCompat="@drawable/threadingcropped"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/imageView6"/>
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type of Cloth"
-        app:layout_constraintBaseline_toBaselineOf="@+id/type"
-        app:layout_constraintEnd_toStartOf="@+id/type"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="TextView"
+        android:id="@+id/textView"
+        android:layout_width="247dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="LIVE RESULTS"
+        android:textColor="#FBFAFA"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/count" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="Image :"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="100dp"
+        android:text="WEFT COUNT"
+        android:textColor="#FFFCFC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" android:id="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" android:textColor="#FDFCFC"
+        android:text="CLOTH TYPE"
+        app:layout_constraintTop_toBottomOf="@+id/count"/>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="134dp" android:layout_marginTop="16dp"
+        android:id="@+id/textView9" app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#F8F5F5" android:text="IMAGE OF THE CLOTH" android:layout_marginStart="134dp"
+        app:layout_constraintTop_toBottomOf="@+id/type"/>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content" app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" android:id="@+id/count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" android:textSize="18sp"
+        android:textColor="@color/white" android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" android:id="@+id/type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.498" android:textSize="18sp"
+        android:textColor="@color/white" android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"/>
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="294dp"
-        android:layout_height="298dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="316dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.349"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

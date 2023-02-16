@@ -50,13 +50,11 @@ public class LiveActivity extends AppCompatActivity {
                 String data=snapshot.child("img").getValue().toString();
 
                 storageReference= FirebaseStorage.getInstance().getReference().child(str+"/"+data+".jpg");
-                Toast.makeText(LiveActivity.this, str+"/"+data, Toast.LENGTH_SHORT).show();
                 try {
                     final File localFile=File.createTempFile("Screenshot (327)","jpg");
                     storageReference.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(LiveActivity.this, "Picture Retrived", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap= BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             img.setImageBitmap(bitmap);
                         }
